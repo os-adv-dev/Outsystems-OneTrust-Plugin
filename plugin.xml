@@ -5,7 +5,7 @@
     <name>OutsystemsPluginOneTrust</name>
 
     <!-- IMPORTANT! merges instead of clobber -->
-    <js-module name="outsystems-one-trust" src="www/outsystems-plugin-onetrust.js"> 
+    <js-module name="OneTrustExtended" src="www/OneTrustExtended.js"> 
         <merges target="OneTrust" />
     </js-module>
     <!-- END IMPORTANT! merges instead of clobber -->
@@ -17,13 +17,19 @@
 
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="OneTrustPlugin">
-                <param name="android-package" value="com.outsystems.experts.one-trust-plugin.OutsystemsPluginOneTrust" />
+            <feature name="OneTrustExtended">
+                <param name="android-package" value="com.outsystems.experts.OutsystemsPluginOneTrust.OneTrustExtended" />
             </feature>
             <preference name="AndroidXEnabled" value="true"/>
         </config-file>
+                <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:launchMode="singleTop" android:name="com.outsystems.experts.OutsystemsPluginOneTrust.CMPActivityExtended" android:theme="@style/Theme.AppCompat.Dialog" />
+        </config-file>
+
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/OutsystemsPluginOneTrust.java" target-dir="src/com/outsystems/experts/OutsystemsPluginOneTrust" />
+        <source-file src="src/android/OneTrustExtended.java" target-dir="src/com/outsystems/experts/OutsystemsPluginOneTrust" />
+        <source-file src="src/android/CMPActivityExtended.java" target-dir="src/com/outsystems/experts/OutsystemsPluginOneTrust" />
+
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
