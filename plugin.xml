@@ -18,7 +18,7 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="OneTrustPlugin">
-                <param name="android-package" value="com.outsystems.experts.one-trust-plugin" />
+                <param name="android-package" value="com.outsystems.experts.one-trust-plugin.OutsystemsPluginOneTrust" />
             </feature>
             <preference name="AndroidXEnabled" value="true"/>
         </config-file>
