@@ -2,7 +2,7 @@
 <plugin id="com.outsystems.experts.one-trust-plugin" version="1.0.0"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>Plugin1_Extended</name>
+    <name>OutsystemsPluginOneTrust</name>
 
     <!-- IMPORTANT! merges instead of clobber -->
     <js-module name="outsystems-one-trust" src="www/outsystems-plugin-onetrust.js"> 
