@@ -1,0 +1,19 @@
+{
+  "name": "com.outsystems.experts.firebasefcm_salesforcecm",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "com.outsystems.experts.firebasefcm_salesforcecm",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC"
+}

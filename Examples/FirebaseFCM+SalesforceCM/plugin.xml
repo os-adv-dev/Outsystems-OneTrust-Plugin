@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.outsystems.experts.firebasefcm_salesforcecm" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Plugin1_Extended</name>
+
+    <!-- IMPORTANT! merges instead of clobber -->
+    <js-module name="FirebaseFCM_SalesforceCM" src="www/FirebaseFCM_SalesforceCM.js"> 
+        <merges target="cordova.plugins.OSFirebaseCloudMessaging" />
+    </js-module>
+    <!-- END IMPORTANT! merges instead of clobber -->
+    
+    <preference name="APP_ID"/>
+    <preference name="ACCESS_TOKEN"/>
+    <preference name="TENANT_SPECIFIC_ENDPOINT"/>
+    <preference name="NOTIFICATION_SMALL_ICON"/>
+    
+    <!-- IMPORTANT! Add the plugin to be extended as dependency -->
+    <dependency id="com.outsystems.firebase.cloudmessaging" url="https://github.com/OutSystems/cordova-outsystems-firebase-cloud-messaging#2.0.0" />
+    <dependency id="cordova-plugin-marketingcloudsdk" url="https://github.com/os-adv-dev/Salesforce-Cordova-Plugin#v2" />
+    <!-- END IMPORTANT! Add the plugin to be extended as dependency -->
+    
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="FirebaseFCM_SalesforceCM">
+                <param name="android-package" value="com.outsystems.experts.firebasefcm_salesforcecm.FirebaseFCM_SalesforceCM" />
+            </feature>
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+            <preference name="GradlePluginKotlinCodeStyle" value="official" />
+            <preference name="AndroidXEnabled" value="true"/>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/FirebaseFCM_SalesforceCM.kt" target-dir="app/src/main/kotlin/com/outsystems/experts/firebasefcm_salesforcecm" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Plugin1_Extended">
+                <param name="ios-package" value="Plugin1_Extended" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/Plugin1_Extended.m" />
+        <header-file src="src/ios/Plugin1+Plugin1_Extended.h" />
+    </platform>
+</plugin>
