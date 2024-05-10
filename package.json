@@ -1,19 +1,19 @@
 {
-  "name": "com.outsystems.experts.plugin1_extended",
-  "version": "1.0.0",
-  "description": "",
-  "cordova": {
-    "id": "com.outsystems.experts.plugin1_extended",
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  },
-  "keywords": [
-    "ecosystem:cordova",
-    "cordova-android",
-    "cordova-ios"
-  ],
-  "author": "",
-  "license": "ISC"
+	"name": "com.outsystems.experts.one-trust-plugin",
+	"version": "1.0.0",
+	"description": "",
+	"cordova": {
+		"id": "com.outsystems.experts.one-trust-plugin",
+		"platforms": [
+			"android",
+			"ios"
+		]
+	},
+	"keywords": [
+		"ecosystem:cordova",
+		"cordova-android",
+		"cordova-ios"
+	],
+	"author": "",
+	"license": "ISC"
 }
