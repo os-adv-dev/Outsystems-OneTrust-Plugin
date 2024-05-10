@@ -1,42 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.outsystems.experts.plugin1_extended" version="1.0.0"
+<plugin id="com.outsystems.experts.one-trust-plugin" version="1.0.0"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Plugin1_Extended</name>
 
     <!-- IMPORTANT! merges instead of clobber -->
-    <js-module name="Plugin1_Extended" src="www/Plugin1_Extended.js"> 
-        <merges target="cordova.plugins.Plugin1" />
+    <js-module name="outsystems-one-trust" src="www/outsystems-plugin-onetrust.js"> 
+        <merges target="OneTrust" />
     </js-module>
     <!-- END IMPORTANT! merges instead of clobber -->
     
     <!-- IMPORTANT! Add the plugin to be extended as dependency -->
-    <dependency id="com.outsystems.experts.plugin1" url="../Plugin1" />
+    <dependency id="cordova-plugin-onetrust-cmp" url="https://github.com/os-adv-dev/cordova-plugin-onetrust-cmp" />
+     <dependency id="cordova-plugin-add-swift-support" url="https://github.com/OutSystems/cordova-plugin-add-swift-support#2.0.3-OS1" />
     <!-- END IMPORTANT! Add the plugin to be extended as dependency -->
 
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="Plugin1_Extended">
-                <param name="android-package" value="com.outsystems.experts.plugin1_extended.Plugin1_Extended" />
+            <feature name="OneTrustPlugin">
+                <param name="android-package" value="com.outsystems.experts.one-trust-plugin" />
             </feature>
-            <feature name="Plugin1Kotlin_Extended">
-                <param name="android-package" value="com.outsystems.experts.plugin1_extended.Plugin1Kotlin_Extended" />
-            </feature>
-            <preference name="GradlePluginKotlinEnabled" value="true" />
-            <preference name="GradlePluginKotlinCodeStyle" value="official" />
             <preference name="AndroidXEnabled" value="true"/>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/Plugin1_Extended.java" target-dir="src/com/outsystems/experts/plugin1_extended" />
-        <source-file src="src/android/Plugin1Kotlin_Extended.kt" target-dir="app/src/main/kotlin/com/outsystems/experts/plugin1" />
+        <source-file src="src/android/OutsystemsPluginOneTrust.java" target-dir="src/com/outsystems/experts/OutsystemsPluginOneTrust" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="Plugin1_Extended">
-                <param name="ios-package" value="Plugin1_Extended" />
+            <feature name="OneTrustPlugin">
+                <param name="ios-package" value="OneTrustPlugin" />
             </feature>
         </config-file>
-        <source-file src="src/ios/Plugin1_Extended.m" />
-        <header-file src="src/ios/Plugin1+Plugin1_Extended.h" />
+        <source-file src="src/ios/OutsystemsPluginOneTrust.swift" />
+        
     </platform>
 </plugin>
