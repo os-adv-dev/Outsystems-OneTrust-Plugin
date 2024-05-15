@@ -32,19 +32,13 @@
     </platform>
     <platform name="ios">
         <hook type="after_prepare" src="hooks/after_prepare_modify_bridging_header.js" />
-        <preference name="CUSTOM_FONT_FILE" />
+        <hook type="after_plugin_add" src="hooks/after_plugin_add_modify_plist.js" />
+        
         <config-file parent="/*" target="config.xml">
             <feature name="OneTrustPlugin">
                 <param name="ios-package" value="OneTrustPlugin" />
             </feature>
         </config-file>
-        <!--<source-file src="src/ios/OutsystemsPluginOneTrust.swift" />-->
         <source-file src="src/ios/AppDelegate+OneTrust.swift" />
-
-        <config-file target="*-Info.plist" parent="UIAppFonts">
-            <array>
-                <string>$CUSTOM_FONT_FILE</string>
-            </array>
-        </config-file>
     </platform>
 </plugin>
