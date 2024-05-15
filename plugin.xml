@@ -33,6 +33,7 @@
 
     </platform>
     <platform name="ios">
+        <preference name="CUSTOM_FONT_NAME" />
         <config-file parent="/*" target="config.xml">
             <feature name="OneTrustPlugin">
                 <param name="ios-package" value="OneTrustPlugin" />
@@ -43,7 +44,7 @@
 
         <config-file target="*-Info.plist" parent="UIAppFonts">
             <array>
-                <string>comic_neue_regular.ttf</string>
+                <string>$CUSTOM_FONT_NAME</string>
             </array>
         </config-file>
     </platform>
