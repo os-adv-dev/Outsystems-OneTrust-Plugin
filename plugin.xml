@@ -33,7 +33,7 @@
 
     </platform>
     <platform name="ios">
-        <preference name="CUSTOM_FONT_NAME" />
+        <preference name="CUSTOM_FONT_FILE" />
         <config-file parent="/*" target="config.xml">
             <feature name="OneTrustPlugin">
                 <param name="ios-package" value="OneTrustPlugin" />
@@ -44,7 +44,7 @@
 
         <config-file target="*-Info.plist" parent="UIAppFonts">
             <array>
-                <string>$CUSTOM_FONT_NAME</string>
+                <string>$CUSTOM_FONT_FILE</string>
             </array>
         </config-file>
     </platform>
