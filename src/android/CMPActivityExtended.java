@@ -146,8 +146,8 @@ public class CMPActivityExtended extends AppCompatActivity  {
         });
     }
     public OTConfiguration getOTConfiguration(@NonNull Context context) {
-        int resourceID=context.getResources().getIdentifier("comic_neue_regular","font",getPackageName());
-        Typeface otGenericTypeFace = null;
+          String customFontFile=this.getIntent().getStringExtra("CustomFontFile").replace(".ttf","");
+        int resourceID=context.getResources().getIdentifier(customFontFile,"font",getPackageName());     Typeface otGenericTypeFace = null;
         if(resourceID!=0) {
             otGenericTypeFace = ResourcesCompat.getFont(context, resourceID);
         }

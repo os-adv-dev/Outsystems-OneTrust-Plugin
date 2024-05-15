@@ -24,6 +24,9 @@ public class OneTrustExtended extends OneTrust {
     private void startCMPActivity(int uiType){
         Intent intent = new Intent(cordova.getContext(), CMPActivityExtended.class);
         intent.putExtra("UIType", uiType);
+        CordovaPreferences prefs = webView.getPreferences();
+        String fontFile=prefs.getString("customfontfile","");
+        intent.putExtra("CustomFontFile",fontFile);
         this.cordova.startActivityForResult(this, intent, 1);
     }
     private void showBannerUI(){
