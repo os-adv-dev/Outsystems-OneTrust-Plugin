@@ -23,7 +23,7 @@ fs.readFile(configXmlPath, 'utf8', function (err, data) {
         var bridgingHeaderPath = path.join('platforms', 'ios', projectName, 'Bridging-Header.h');
 
         // Define the import statement you want to add
-        var importStatement = '#import "AppDelegate2.h"';
+        var importStatement = '#import "AppDelegate.h"';
 
         // Check if the import statement already exists in the bridging header
         fs.readFile(bridgingHeaderPath, 'utf8', function (readErr, bridgingHeaderData) {
