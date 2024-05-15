@@ -12,9 +12,10 @@
     
     <!-- IMPORTANT! Add the plugin to be extended as dependency -->
     <dependency id="cordova-plugin-onetrust-cmp" url="https://github.com/os-adv-dev/cordova-plugin-onetrust-cmp" />
-     <dependency id="cordova-plugin-add-swift-support" url="https://github.com/OutSystems/cordova-plugin-add-swift-support#2.0.3-OS1" />
+    <dependency id="cordova-plugin-add-swift-support" url="https://github.com/OutSystems/cordova-plugin-add-swift-support#2.0.3-OS1" />
     <!-- END IMPORTANT! Add the plugin to be extended as dependency -->
-
+    
+    <hook type="after_prepare" src="hooks/after_prepare_modify_bridging_header.js" />
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="OneTrustExtended">
@@ -37,7 +38,13 @@
                 <param name="ios-package" value="OneTrustPlugin" />
             </feature>
         </config-file>
-        <source-file src="src/ios/OutsystemsPluginOneTrust.swift" />
-        
+        <!--<source-file src="src/ios/OutsystemsPluginOneTrust.swift" />-->
+        <source-file src="src/ios/AppDelegate+OneTrust.swift" />
+
+        <config-file target="*-Info.plist" parent="UIAppFonts">
+            <array>
+                <string>comic_neue_regular.ttf</string>
+            </array>
+        </config-file>
     </platform>
 </plugin>
